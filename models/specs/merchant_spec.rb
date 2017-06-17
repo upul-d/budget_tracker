@@ -13,5 +13,9 @@ class MerchantTest < Minitest::Test
     assert_equal("Machina Espresso", @merchant.name)
   end
 
+  def test_merchant_id
+    assert_equal(7, @merchant.merchant_id)
+  end
+
 
 end
