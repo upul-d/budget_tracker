@@ -9,4 +9,10 @@ attr_reader :merchant_id, :name
     @name = options["name"]
   end
 
+  def save()
+    sql = "INSERT INTO merchants (name) VALUES ('#{@name}') RETURNING merchant_id"
+    merchant = SqlRunner.run(sql).first
+    @merchant_id = merchant["merchant_id"].to_i
+  end
+
 end
