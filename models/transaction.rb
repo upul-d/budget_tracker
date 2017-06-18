@@ -1,9 +1,8 @@
 require_relative("../db/sql_runner")
-require("pry-byebug")
 
 class Transaction
 
-  attr_reader :amount, :transaction_id, :merchant_id, :tag_id 
+  attr_reader :transaction_id, :amount, :merchant_id, :tag_id
 
   def initialize(options)
     @amount = options["amount"]
@@ -23,6 +22,18 @@ class Transaction
     transactions = SqlRunner.run(sql)
     result = transactions.map { |transaction| Transaction.new(transaction) }
     return result
+  end
+
+  def merchant()
+    sql = "SELECT * FROM merchants WHERE merchant_id = #{@merchant_id}"
+    result = SqlRunner.run(sql).first
+    return Merchant.new(result)
+  end
+
+  def tag()
+      sql = "SELECT * FROM tags WHERE tag_id = #{@tag_id}"
+      result = SqlRunner.run(sql).first
+      return Tag.new(result)
   end
 
 end
