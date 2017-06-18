@@ -1,4 +1,5 @@
 require_relative("../db/sql_runner")
+require("pry-byebug")
 
 class Transaction
 
@@ -15,6 +16,13 @@ class Transaction
     sql = "INSERT INTO transactions (amount, merchant_id, tag_id) VALUES (#{@amount}, #{@merchant_id}, #{@tag_id}) RETURNING transaction_id"
     transaction = SqlRunner.run(sql).first
     @transaction_id = transaction["transaction_id"].to_i
+  end
+
+  def self.all()
+    sql = "SELECT * FROM transactions;"
+    transactions = SqlRunner.run(sql)
+    result = transactions.map { |transaction| Transaction.new(transaction) }
+    return result
   end
 
 end
