@@ -1,8 +1,11 @@
 <h1>All Transactions</h1>
 
+<h3>Total spent: £<%= @total %></h3>
+
 <% @transactions.each do |transaction| %>
   <p>Amount: <%= transaction.amount %></p>
   <p>Merchant: <%= transaction.merchant.name %></p>
   <p>Tag: <%= transaction.tag.name %></p>
   <hr>
   <% end %>
+

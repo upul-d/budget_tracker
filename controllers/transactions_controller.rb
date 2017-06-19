@@ -7,7 +7,11 @@ require("pry-byebug")
 
 get "/transactions" do
   @transactions = Transaction.all()
-  erb(:"transactions/index")
+  @total = 0
+  for transaction in @transactions
+    @total += transaction.amount.to_i
+  end
+  erb (:"transactions/index")
 end
 
 get "/transactions/new" do
