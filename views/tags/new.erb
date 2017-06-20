@@ -1,15 +1,2 @@
-<h1>New Tag</h1>
-<form method="post" action="/tags/new">
-  <label for="name" class="formLabel">Name:</label>
-  <input id="name" type= "text" name ="name">
 
-  <input type="submit" value="Create Tag">
-</form>
-
-<h1>Current Tags</h1>
-
-<% @tags.each do |tag| %>
-  <p><%= tag.name %></p>
-  <hr>
-  <% end %>
 

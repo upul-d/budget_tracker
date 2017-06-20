@@ -1,3 +1,11 @@
+<h1>New Merchant</h1>
+<form method="post" action="/merchants">
+  <label for="name" class="formLabel">Name:</label>
+  <input id="name" type= "text" name ="name">
+
+  <input type="submit" value="Create Merchant">
+</form>
+
 <h1>Current Merchants</h1>
 
 <% @merchants.each do |merchant| %>
