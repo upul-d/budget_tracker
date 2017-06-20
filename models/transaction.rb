@@ -24,6 +24,13 @@ class Transaction
     return result
   end
 
+  def self.transactions_by_tag(passed_tag_id)
+    sql = "SELECT * FROM transactions WHERE tag_id = #{passed_tag_id};"
+    transactions = SqlRunner.run(sql)
+    result = transactions.map { |transaction| Transaction.new(transaction) }
+    return result
+  end
+
   def merchant()
     sql = "SELECT * FROM merchants WHERE merchant_id = #{@merchant_id}"
     result = SqlRunner.run(sql).first

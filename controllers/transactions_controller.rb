@@ -11,7 +11,18 @@ get "/transactions" do
   for transaction in @transactions
     @total += transaction.amount.to_i
   end
-  erb (:"transactions/index")
+  @tags = Tag.all()
+  erb(:"transactions/index")
+end
+
+get "/transactions/bytag/:tag_id" do
+  @transactions = Transaction.transactions_by_tag(params[:tag_id])
+  @total = 0
+  for transaction in @transactions
+    @total += transaction.amount.to_i
+  end
+  @tags = Tag.all()
+  erb(:"transactions/bytag")
 end
 
 get "/transactions/new" do

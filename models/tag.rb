@@ -1,4 +1,5 @@
 require_relative("../db/sql_runner")
+require_relative("transaction")
 
 class Tag
 
@@ -21,5 +22,5 @@ attr_reader :name, :tag_id
     result = tags.map { |tag| Tag.new(tag) }
     return result
   end
-
+  
 end
