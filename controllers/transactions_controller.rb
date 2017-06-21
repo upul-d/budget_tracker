@@ -37,6 +37,7 @@ post "/transactions/new" do
   erb(:"transactions/create")
 end
 
+
 get "/transactions/edit/:transaction_id" do
   @merchants = Merchant.all()
   @tags = Tag.all()
@@ -49,4 +50,11 @@ post "/transactions/edit/:transaction_id" do
   @transaction.update()
   redirect to("/transactions")
 end
+
+post "/transactions/delete/:transaction_id" do
+  transaction = Transaction.find(params[:transaction_id])
+  transaction.delete()
+  redirect to("/transactions")
+end
+
 

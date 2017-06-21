@@ -29,10 +29,9 @@ transaction1 = Transaction.new({
   "amount" => 20,
   "merchant_id" => merchant1.merchant_id,
   "tag_id" => tag1.tag_id,
-  "date" => Date.new(2010-01-02)
+  "date" => Date.new(2017-01-02)
   })
-# binding.pry
-# nil
+
 transaction2 = Transaction.new({
   "amount" => 7,
   "merchant_id" => merchant2.merchant_id,
