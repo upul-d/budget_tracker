@@ -2,13 +2,14 @@ require_relative("../db/sql_runner")
 
 class Transaction
 
-  attr_reader :transaction_id, :amount, :merchant_id, :tag_id
+  attr_reader :transaction_id
+  attr_accessor :amount, :merchant_id, :tag_id
 
   def initialize(options)
     @amount = options["amount"]
     @transaction_id = options["transaction_id"].to_i if options["transaction_id"]
-    @merchant_id = options["merchant_id"]
-    @tag_id = options["tag_id"]
+    @merchant_id = options["merchant_id"].to_i
+    @tag_id = options["tag_id"].to_i
   end
 
   def save()
@@ -41,6 +42,22 @@ class Transaction
       sql = "SELECT * FROM tags WHERE tag_id = #{@tag_id}"
       result = SqlRunner.run(sql).first
       return Tag.new(result)
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM transactions WHERE transaction_id=#{id};"
+    transaction = SqlRunner.run(sql)
+    result = Transaction.new(transaction.first)
+    return result
+  end
+
+  def update()
+    sql = "UPDATE transactions SET
+      amount = '#{@amount}',
+      merchant_id = '#{@merchant_id}',
+      tag_id = '#{@tag_id}'
+      WHERE transaction_id = '#{@transaction_id}';"
+    SqlRunner.run( sql )
   end
 
 end

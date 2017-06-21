@@ -36,3 +36,17 @@ post "/transactions/new" do
   @transaction.save()
   erb(:"transactions/create")
 end
+
+get "/transactions/edit/:transaction_id" do
+  @merchants = Merchant.all()
+  @tags = Tag.all()
+  @transaction = Transaction.find(params[:transaction_id])
+  erb(:"transactions/edit")
+end
+
+post "/transactions/edit/:transaction_id" do
+  @transaction = Transaction.new(params)
+  @transaction.update()
+  redirect to("/transactions")
+end
+
