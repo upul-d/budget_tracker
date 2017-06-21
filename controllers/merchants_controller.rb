@@ -15,3 +15,14 @@ post "/merchants" do
   @merchant.save()
   erb(:"merchants/create")
 end
+
+get "/merchants/edit/:merchant_id" do
+  @merchant = Merchant.find(params[:merchant_id])
+  erb(:"merchants/edit")
+end
+
+post "/merchants/edit/:merchant_id" do
+  @merchant = Merchant.new(params)
+  @merchant.update()
+  redirect to("/merchants")
+end

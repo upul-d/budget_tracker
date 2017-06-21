@@ -1,16 +1,16 @@
-<h1>All Transactions</h1>
+<h1>Manage Your Transactions</h1>
 
-<h3>Total spent: £<%= @total %></h3>
+<h2>Total spent: £<%= @total %></h2>
 
-<h4>Click tag to view expenditure by tag:
+<h2>Click to view expenditure by tag:</h2>
  <ul>
   <% @tags.each do |tag| %>
    <li><a href="/transactions/bytag/<%= tag.tag_id %>"><%= tag.name %></a></li>
    <% end %>
  </ul>
-</h4>
 
-<h4>View/edit transactions:</h4>
+
+<h2>View/Edit Transactions:</h2>
 <% @transactions.each do |transaction| %>
   <p>Merchant: <%= transaction.merchant.name %></p>
   <p>Tag: <%= transaction.tag.name %></p>

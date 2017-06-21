@@ -1,4 +1,6 @@
-<h1>New Merchant</h1>
+<h1>Manage Your Merchants</h1>
+
+<h2>Add New Merchant</h2>
 <form method="post" action="/merchants">
   <label for="name" class="formLabel">Name:</label>
   <input id="name" type= "text" name ="name">
@@ -6,9 +8,10 @@
   <input type="submit" value="Create Merchant">
 </form>
 
-<h1>Current Merchants</h1>
-
+<h2>View/Edit Merchants:</h2>
 <% @merchants.each do |merchant| %>
-  <p><%= merchant.name %></p>
-  <hr>
-  <% end %>
+<p><b><%= merchant.name %></b></p>
+<input type="button" value="Edit Merchant" onclick="window.location.href='/merchants/edit/<%= merchant.merchant_id %>'" />
+</form>
+<hr>
+<% end %>

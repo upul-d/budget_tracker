@@ -1,4 +1,6 @@
-<h1>New Tag</h1>
+<h1>Manage Your Tags</h1>
+
+<h2>Add New Tag</h2>
 <form method="post" action="/tags">
   <label for="name" class="formLabel">Name:</label>
   <input id="name" type= "text" name ="name">
@@ -6,10 +8,10 @@
   <input type="submit" value="Create Tag">
 </form>
 
-<h4>View/edit tags:</h4>
+<h2>View/edit Tags:</h2>
 
 <% @tags.each do |tag| %>
-  <p><%= tag.name %></p>
+  <p><b><%= tag.name %></b></p>
   <input type="button" value="Edit Tag" onclick="window.location.href='/tags/edit/<%= tag.tag_id %>'" />
     </form>
     <hr>
