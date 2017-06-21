@@ -14,6 +14,7 @@
   <p><b>Amount: £<%= transaction.amount %></b></p>
   <p>Merchant: <%= transaction.merchant.name %></p>
   <p>Tag: <%= transaction.tag.name %></p>
+  <p>Date: <%= transaction.date %></p>
   <form>
   <input type="button" value="Edit Transaction" onclick="window.location.href='/transactions/edit/<%= transaction.transaction_id %>'" />
   </form>
