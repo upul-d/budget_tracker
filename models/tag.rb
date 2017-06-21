@@ -3,7 +3,8 @@ require_relative("transaction")
 
 class Tag
 
-attr_reader :name, :tag_id
+attr_reader :tag_id
+attr_accessor :name 
 
   def initialize(options)
     @tag_id = options["tag_id"].to_i if options["tag_id"]
@@ -21,6 +22,20 @@ attr_reader :name, :tag_id
     tags = SqlRunner.run(sql)
     result = tags.map { |tag| Tag.new(tag) }
     return result
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM tags WHERE tag_id = #{id};"
+    tag = SqlRunner.run(sql).first
+    result = Tag.new(tag)
+    return result
+  end
+
+  def update()
+    sql = "UPDATE tags SET
+      name = '#{@name}'
+      WHERE tag_id = '#{@tag_id}'"
+    SqlRunner.run(sql)
   end
   
 end

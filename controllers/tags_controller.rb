@@ -15,3 +15,14 @@ post "/tags" do
   @tag.save()
   erb(:"tags/create")
 end
+
+get "/tags/edit/:tag_id" do
+  @tag = Tag.find(params[:tag_id])
+  erb(:"tags/edit")
+end
+
+post "/tags/edit/:tag_id" do
+  @tag = Tag.new(params)
+  @tag.update()
+  redirect to("/tags")
+end

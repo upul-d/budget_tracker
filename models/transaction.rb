@@ -45,7 +45,7 @@ class Transaction
   end
 
   def self.find(id)
-    sql = "SELECT * FROM transactions WHERE transaction_id=#{id};"
+    sql = "SELECT * FROM transactions WHERE transaction_id = #{id};"
     transaction = SqlRunner.run(sql)
     result = Transaction.new(transaction.first)
     return result
@@ -56,8 +56,8 @@ class Transaction
       amount = '#{@amount}',
       merchant_id = '#{@merchant_id}',
       tag_id = '#{@tag_id}'
-      WHERE transaction_id = '#{@transaction_id}';"
-    SqlRunner.run( sql )
+      WHERE transaction_id = '#{@transaction_id}'"
+    SqlRunner.run(sql)
   end
 
 end

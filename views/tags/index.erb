@@ -6,9 +6,11 @@
   <input type="submit" value="Create Tag">
 </form>
 
-<h1>Current Tags</h1>
+<h4>View/edit tags:</h4>
 
 <% @tags.each do |tag| %>
   <p><%= tag.name %></p>
-  <hr>
-  <% end %>
+  <input type="button" value="Edit Tag" onclick="window.location.href='/tags/edit/<%= tag.tag_id %>'" />
+    </form>
+    <hr>
+    <% end %>
