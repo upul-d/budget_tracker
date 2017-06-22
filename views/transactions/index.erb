@@ -1,17 +1,22 @@
 <h1>Manage Your Transactions</h1>
 
-<h2>Total Expenditure: £<%= @total %></h2>
+<div class="column_layout">
+ <div class="main_budget_col">
+ <h2>Total Expenditure: £<%= @total %></h2>
+ </div>
+ 
+ <div class="edit_budget_col">
+ <h3>View expenditure by tag:</h3>
+<ul>
+ <% @tags.each do |tag| %>
+  <li><a href="/transactions/bytag/<%= tag.tag_id %>"><%= tag.name %></a></li>
+  <% end %>
+</ul>
+</div>
 
-<h3>View expenditure by tag:</h3>
- <ul>
-  <% @tags.each do |tag| %>
-   <li><a href="/transactions/bytag/<%= tag.tag_id %>"><%= tag.name %></a></li>
-   <% end %>
- </ul>
-
-
-<h2>Transaction Record:</h2>
-<% @transactions.each do |transaction| %>
+<div class="new_transaction">
+  <h2>Transaction Record:</h2>
+  <% @transactions.each do |transaction| %>
   <p>Merchant: <%= transaction.merchant.name %></p>
   <p>Tag: <%= transaction.tag.name %></p>
   <p>Date: <%= transaction.date %></p>
@@ -21,7 +26,5 @@
   </form>
   <hr>
   <% end %>
-
-
-  
-
+  </div>
+  </div>

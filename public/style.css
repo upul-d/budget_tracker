@@ -3,6 +3,29 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+
+
+.nav {
+  display: inline-block;
+  list-style-type: none;
+}
+
+ul {
+  margin: 30px auto;
+  text-align: center;
+}
+
+li {
+  color: Black;
+  display: inline-block;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  text-align: left;
+  font-weight: 300;
+  text-transform: uppercase;
+  padding: 0 40px;
+}
+
 .column_layout {
   display: flex;
 }
@@ -21,3 +44,18 @@ body {
   flex: 1;
   order: 1;
 }
+
+/*/Transactions
+*/
+.2_column_layout {
+  display: flex;
+}
+
+.main_column {
+  flex: 1;
+}
+
+.sub_column {
+  flex: 1;
+}
+
