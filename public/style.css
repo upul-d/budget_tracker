@@ -1,5 +1,23 @@
 body {
   background-color: dodgerblue;
   font-family: 'Roboto', sans-serif;
+}
 
+.column_layout {
+  display: flex;
+}
+
+.main_budget_col {
+  flex: 1;
+  order: 2
+}
+
+.edit_budget_col {
+  flex: 1;
+  order: 3;
+}
+
+.new_transaction {
+  flex: 1;
+  order: 1;
 }

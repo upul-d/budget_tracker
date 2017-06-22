@@ -1,12 +1,16 @@
 <h1>Money Cashboard</h1>
 
+<div class="column_layout">
+<div class="main_budget_col">
 <h3>Hello, welcome to your Money Cashboard</h3>
 <p>Budget: <b>£<%= @budget.amount %></b></p>
 
 <p>Expenditure: <b>£<%= @total %></b></p>
 
 <p>Remaining funds: <b>£<%= @balance %></b></p>
+</div>
 
+<div class="edit_budget_col">
 <h3>Edit Budget</h3>
 <form method="post" action="/budget/edit">
   <label for="name">Budget:</label>
@@ -14,8 +18,9 @@
   <input type="hidden" name="budget_id" value="<%= @budget.budget_id %>">
   <input type="submit" value="Save New Budget">
 </form>
+</div>
 
-
+<div class="new_transaction">
 <h3>New Transaction:</h3>
 <form method="post" action="/transactions/new">
   <label for="amount" class="formLabel">Amount: £</label>
@@ -40,4 +45,5 @@
 
   <input type="submit" value="Create New Transaction">
 </form>
-
+</div>
+</div>
