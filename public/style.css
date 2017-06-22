@@ -1,7 +1,5 @@
-.home_header {
-  color: red;
-}
+body {
+  background-color: dodgerblue;
+  font-family: 'Roboto', sans-serif;
 
-h1 {
-  color: blue;
 }
