@@ -1,6 +1,43 @@
 <h1>Money Cashboard</h1>
 
 <h3>Hello, welcome to your Money Cashboard</h3>
+<p>Budget: <b>£<%= @budget.amount %></b></p>
 
-<h5>What would you like to do?</h5>
+<p>Expenditure: <b>£<%= @total %></b></p>
+
+<p>Remaining funds: <b>£<%= @balance %></b></p>
+
+<h3>Edit Budget</h3>
+<form method="post" action="/budget/edit">
+  <label for="name">Budget:</label>
+  <input id="amount" type="text" name="amount" value="<%= @budget.amount() %>">
+  <input type="hidden" name="budget_id" value="<%= @budget.budget_id %>">
+  <input type="submit" value="Save New Budget">
+</form>
+
+
+<h3>New Transaction:</h3>
+<form method="post" action="/transactions/new">
+  <label for="amount" class="formLabel">Amount: £</label>
+  <input id="amount" type= "text" placeholder="e.g. 100" name ="amount">
+
+ <label for="date" class="formLabel">Date:</label>
+ <input id="date" type= "text" placeholder="YYYY-MM-DD" name ="date">
+
+  <label for="merchant-select" class="formLabel">Select a Merchant</label>
+  <select id="merchant-select" name ="merchant_id">
+    <% for merchant in @merchants %>
+    <option value = "<%= merchant.merchant_id %>"><%= merchant.name %></option>
+    <% end %>
+  </select>
+
+  <label for="tag-select" class="formLabel">Select a Tag</label>
+  <select id="tag-select" name ="tag_id">
+    <% for tag in @tags %>
+    <option value = "<%= tag.tag_id %>"><%= tag.name %></option>
+    <% end %>
+  </select>
+
+  <input type="submit" value="Create New Transaction">
+</form>
 

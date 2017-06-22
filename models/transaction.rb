@@ -40,9 +40,9 @@ class Transaction
   end
 
   def tag()
-      sql = "SELECT * FROM tags WHERE tag_id = #{@tag_id}"
-      result = SqlRunner.run(sql).first
-      return Tag.new(result)
+    sql = "SELECT * FROM tags WHERE tag_id = #{@tag_id}"
+    result = SqlRunner.run(sql).first
+    return Tag.new(result)
   end
 
   def self.find(id)

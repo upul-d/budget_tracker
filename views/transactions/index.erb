@@ -1,8 +1,8 @@
 <h1>Manage Your Transactions</h1>
 
-<h2>Total spent: £<%= @total %></h2>
+<h2>Total Expenditure: £<%= @total %></h2>
 
-<h2>Click to view expenditure by tag:</h2>
+<h3>View expenditure by tag:</h3>
  <ul>
   <% @tags.each do |tag| %>
    <li><a href="/transactions/bytag/<%= tag.tag_id %>"><%= tag.name %></a></li>
@@ -10,7 +10,7 @@
  </ul>
 
 
-<h2>View/Edit Transactions:</h2>
+<h2>Transaction Record:</h2>
 <% @transactions.each do |transaction| %>
   <p>Merchant: <%= transaction.merchant.name %></p>
   <p>Tag: <%= transaction.tag.name %></p>

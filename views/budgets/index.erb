@@ -1,0 +1,11 @@
+<h1>Manage Your Budget</h1>
+
+
+<h2>Edit Budget</h2>
+<form method="post" action="/budget/edit">
+  <label for="name">Budget:</label>
+  <input id="amount" type="text" name="amount" value="<%= @budget.amount() %>">
+  <input type="hidden" name="budget_id" value="<%= @budget.budget_id %>">
+  <input type="submit" value="Save New Budget">
+</form>
+

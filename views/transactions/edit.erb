@@ -1,6 +1,6 @@
 <h1>Edit Transaction</h1>
 <form method="post" action="/transactions/edit/<%= @transaction.transaction_id %>">
-  <label for="amount">Amount:</label>
+  <label for="amount">Amount: £</label>
   <input id="amount" type="text" name="amount" value="<%= @transaction.amount() %>">
 
   <label for="date">Date:</label>
@@ -21,9 +21,11 @@
   <% end %>
 </select>
 
-<input type="submit" value="Save Changes">
+<input type="submit" value="Save Transaction Changes">
 </form>
 
+
+<h4>Or:</h4>
 <form method="post" action="/transactions/delete/<%= @transaction.transaction_id %>">
 <input type="submit"" value="Delete Transaction"> 
 </form>

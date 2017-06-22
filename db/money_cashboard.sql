@@ -1,4 +1,5 @@
 DROP TABLE transactions;
+DROP TABLE budgets;
 DROP TABLE merchants;
 DROP TABLE tags;
 
@@ -10,6 +11,11 @@ CREATE TABLE merchants (
 CREATE TABLE tags (
   tag_id SERIAL8 PRIMARY KEY,
   name VARCHAR(255)
+);
+
+CREATE TABLE budgets (
+  budget_id SERIAL8 PRIMARY KEY,
+  amount INT8
 );
 
 CREATE TABLE transactions (

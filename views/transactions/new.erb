@@ -1,7 +1,7 @@
 <h1>New Transaction</h1>
 <form method="post" action="/transactions/new">
-  <label for="amount" class="formLabel">Amount:</label>
-  <input id="amount" type= "text" name ="amount">
+  <label for="amount" class="formLabel">Amount: £</label>
+  <input id="amount" type= "text" placeholder="e.g. 100" name ="amount">
 
  <label for="date" class="formLabel">Date:</label>
  <input id="date" type= "text" placeholder="YYYY-MM-DD" name ="date">
@@ -20,5 +20,5 @@
     <% end %>
   </select>
 
-  <input type="submit" value="Create Transaction">
+  <input type="submit" value="Create New Transaction">
 </form>
