@@ -1,5 +1,5 @@
-# budget_tracker
-First project at CodeClan: a web app to manage a budget and log transactions
+# Budget Tracker
+This was my first project at CodeClan: a web app to manage a budget and log transactions.
 
 Built using: Sinatra; Ruby; PostgreSQL; HTML5; CSS
 
