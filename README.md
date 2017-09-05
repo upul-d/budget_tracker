@@ -35,7 +35,7 @@ After cloning/downloading the repository, please go to its root directory in you
 Then, in your browser, please go to:
 ```http://localhost:4567/```
 
-After exploring the app, please type ```ctrl + d``` in your terminal to quit the Sinatra server process.
+After exploring the app, please type ```ctrl + c``` in your terminal to quit the Sinatra server process.
 
 You may also want to drop the database from your machine using the following terminal command:
 
