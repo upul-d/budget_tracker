@@ -1,7 +1,7 @@
 # Budget Tracker
 This was my first project at CodeClan: a web app to manage a budget and log transactions.
 
-Built using: Sinatra; Ruby; PostgreSQL; HTML5; CSS
+Built using: Sinatra; Ruby; PostgreSQL; HTML5; CSS (tested using MiniTest)
 
 This app first met, then exceeded the MVP specificiations.
 
