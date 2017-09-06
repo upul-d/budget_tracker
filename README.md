@@ -30,6 +30,8 @@ After cloning/downloading the repository, please go to its root directory in you
 
 ```psql -d money_cashboard -f db/money_cashboard.sql```
 
+```ruby db/seeds.rb```
+
 ```ruby app.rb```
 
 Then, in your browser, please go to:
